@@ -1,46 +1,27 @@
 const express = require('express');
 const router  = express.Router();
-const https   = require('https');
+const crypto  = require('crypto');
 const auth    = require('../middleware/auth');
 
-const YOCO_SECRET = process.env.YOCO_SECRET || '';
+const MERCHANT_ID  = process.env.PAYFAST_MERCHANT_ID  || '';
+const MERCHANT_KEY = process.env.PAYFAST_MERCHANT_KEY || '';
+const PASSPHRASE   = process.env.PAYFAST_PASSPHRASE   || '';
+const APP_URL      = process.env.APP_URL || 'https://signforge-6-wtru.onrender.com';
 
-// Plan prices in cents (ZAR)
 const PLANS = {
-  starter: { amount: 199,  label: 'Starter Plan' },
-  pro:     { amount: 499,  label: 'Pro Plan'     }
+  starter: { amount: '19.99', name: 'SignForge Starter Plan', frequency: 3, cycles: 0 },
+  pro:     { amount: '49.99', name: 'SignForge Pro Plan',     frequency: 3, cycles: 0 }
 };
 
-// Helper: call Yoco API
-function yocoRequest(path, body) {
-  return new Promise((resolve, reject) => {
-    const data = JSON.stringify(body);
-    const opts = {
-      hostname: 'payments.yoco.com',
-      port: 443,
-      path,
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${YOCO_SECRET}`,
-        'Content-Type':  'application/json',
-        'Content-Length': Buffer.byteLength(data)
-      }
-    };
-    const req = https.request(opts, res => {
-      let raw = '';
-      res.on('data', c => raw += c);
-      res.on('end', () => {
-        try { resolve({ status: res.statusCode, body: JSON.parse(raw) }); }
-        catch(e) { resolve({ status: res.statusCode, body: raw }); }
-      });
-    });
-    req.on('error', reject);
-    req.write(data);
-    req.end();
-  });
+function buildSignature(data) {
+  let str = Object.keys(data)
+    .filter(k => data[k] !== '' && data[k] !== null && data[k] !== undefined)
+    .map(k => `${k}=${encodeURIComponent(String(data[k])).replace(/%20/g, '+')}`)
+    .join('&');
+  if (PASSPHRASE) str += `&passphrase=${encodeURIComponent(PASSPHRASE).replace(/%20/g, '+')}`;
+  return crypto.createHash('md5').update(str).digest('hex');
 }
 
-// GET /api/billing/subscription
 router.get('/subscription', auth, (req, res) => {
   const u = req.user;
   res.json({
@@ -51,37 +32,46 @@ router.get('/subscription', auth, (req, res) => {
   });
 });
 
-// POST /api/billing/create-checkout  { plan: 'starter'|'pro' }
-router.post('/create-checkout', auth, async (req, res) => {
+router.post('/create-checkout', auth, (req, res) => {
   const { plan } = req.body;
   if (!PLANS[plan]) return res.status(400).json({ error: 'Invalid plan' });
 
-  if (!YOCO_SECRET || YOCO_SECRET.includes('REPLACE')) {
-    // Demo mode — no real Yoco key yet
+  if (!MERCHANT_ID || !MERCHANT_KEY) {
     return res.json({ demoMode: true });
   }
 
-  try {
-    const appUrl = process.env.APP_URL || 'https://signforge-6-wtru.onrender.com';
-    const result = await yocoRequest('/v1/checkouts', {
-      amount:      PLANS[plan].amount,
-      currency:    'ZAR',
-      successUrl:  `${appUrl}/payment-success?plan=${plan}`,
-      cancelUrl:   `${appUrl}/billing`,
-      metadata:    { userId: req.user.id, plan }
-    });
+  const p = PLANS[plan];
+  const data = {
+    merchant_id:       MERCHANT_ID,
+    merchant_key:      MERCHANT_KEY,
+    return_url:        `${APP_URL}/payment-success?plan=${plan}`,
+    cancel_url:        `${APP_URL}/billing`,
+    notify_url:        `${APP_URL}/api/billing/webhook`,
+    name_first:        req.user.name.split(' ')[0] || 'Customer',
+    name_last:         req.user.name.split(' ').slice(1).join(' ') || 'User',
+    email_address:     req.user.email,
+    m_payment_id:      `${req.user.id}-${plan}-${Date.now()}`,
+    amount:            p.amount,
+    item_name:         p.name,
+    subscription_type: 1,
+    billing_date:      new Date().toISOString().split('T')[0],
+    recurring_amount:  p.amount,
+    frequency:         p.frequency,
+    cycles:            p.cycles,
+    custom_str1:       req.user.id,
+    custom_str2:       plan,
+  };
 
-    if (result.status === 200 || result.status === 201) {
-      return res.json({ url: result.body.redirectUrl });
-    }
-    throw new Error(result.body.message || 'Yoco error');
-  } catch (err) {
-    console.error('Yoco checkout error:', err);
-    res.status(500).json({ error: 'Payment failed. Try again.' });
-  }
+  data.signature = buildSignature(data);
+
+  const payfastUrl = 'https://www.payfast.co.za/eng/process?' +
+    Object.keys(data)
+      .map(k => `${k}=${encodeURIComponent(String(data[k]))}`)
+      .join('&');
+
+  res.json({ url: payfastUrl });
 });
 
-// POST /api/billing/demo-upgrade  (demo mode only)
 router.post('/demo-upgrade', auth, (req, res) => {
   const { plan } = req.body;
   if (!PLANS[plan]) return res.status(400).json({ error: 'Invalid plan' });
@@ -89,26 +79,20 @@ router.post('/demo-upgrade', auth, (req, res) => {
   res.json({ success: true, plan });
 });
 
-// POST /api/billing/webhook  (Yoco webhook)
-router.post('/webhook', express.raw({ type: 'application/json' }), async (req, res) => {
+router.post('/webhook', express.urlencoded({ extended: true }), async (req, res) => {
   try {
-    const event = JSON.parse(req.body);
-    if (event.type === 'payment.succeeded') {
-      const { userId, plan } = event.payload.metadata || {};
-      if (userId && plan) {
-        // Update user plan in db
-        const db = require('../db');
-        const user = db.users.find(u => u.id === userId);
-        if (user) user.plan = plan;
-      }
+    const data = req.body;
+    const userId = data.custom_str1;
+    const plan   = data.custom_str2;
+    if (data.payment_status === 'COMPLETE' && userId && plan) {
+      const db = require('../db');
+      const user = db.users.find(u => u.id === userId);
+      if (user) { user.plan = plan; console.log(`User ${userId} upgraded to ${plan}`); }
     }
-    res.json({ received: true });
-  } catch (e) {
-    res.status(400).json({ error: 'Webhook error' });
-  }
+    res.send('OK');
+  } catch (e) { console.error('Webhook error:', e); res.send('OK'); }
 });
 
-// POST /api/billing/cancel
 router.post('/cancel', auth, (req, res) => {
   req.user.plan = 'free';
   res.json({ success: true });
