@@ -5,10 +5,10 @@ const auth    = require('../middleware/auth');
 
 const YOCO_SECRET = process.env.YOCO_SECRET || '';
 
-// Plan prices in cents (ZAR)
+// Plan prices in cents (ZAR) — Yoco requires cents
 const PLANS = {
-  starter: { amount: 199,  label: 'Starter Plan' },
-  pro:     { amount: 499,  label: 'Pro Plan'     }
+  starter: { amount: 1900, label: 'Starter Plan' },
+  pro:     { amount: 4900, label: 'Pro Plan'     }
 };
 
 // Helper: call Yoco API
@@ -16,13 +16,13 @@ function yocoRequest(path, body) {
   return new Promise((resolve, reject) => {
     const data = JSON.stringify(body);
     const opts = {
-      hostname: 'payments.yoco.com',
+      hostname: 'online.yoco.com',
       port: 443,
       path,
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${YOCO_SECRET}`,
-        'Content-Type':  'application/json',
+        'Authorization':  `Bearer ${YOCO_SECRET}`,
+        'Content-Type':   'application/json',
         'Content-Length': Buffer.byteLength(data)
       }
     };
@@ -63,18 +63,25 @@ router.post('/create-checkout', auth, async (req, res) => {
 
   try {
     const appUrl = process.env.APP_URL || 'https://signforge-6-wtru.onrender.com';
+
     const result = await yocoRequest('/v1/checkouts', {
-      amount:      PLANS[plan].amount,
-      currency:    'ZAR',
-      successUrl:  `${appUrl}/payment-success?plan=${plan}`,
-      cancelUrl:   `${appUrl}/billing`,
-      metadata:    { userId: req.user.id, plan }
+      amount:     PLANS[plan].amount,
+      currency:   'ZAR',
+      successUrl: `${appUrl}/payment-success?plan=${plan}`,
+      cancelUrl:  `${appUrl}/billing`,
+      metadata:   { userId: req.user.id, plan }
     });
 
+    console.log('Yoco response:', result.status, JSON.stringify(result.body));
+
     if (result.status === 200 || result.status === 201) {
-      return res.json({ url: result.body.redirectUrl });
+      // Yoco returns redirectUrl or url depending on version
+      const redirectUrl = result.body.redirectUrl || result.body.url;
+      if (!redirectUrl) throw new Error('No redirect URL returned from Yoco');
+      return res.json({ url: redirectUrl });
     }
-    throw new Error(result.body.message || 'Yoco error');
+
+    throw new Error(result.body?.message || result.body?.error || 'Yoco error');
   } catch (err) {
     console.error('Yoco checkout error:', err);
     res.status(500).json({ error: 'Payment failed. Try again.' });
@@ -94,9 +101,8 @@ router.post('/webhook', express.raw({ type: 'application/json' }), async (req, r
   try {
     const event = JSON.parse(req.body);
     if (event.type === 'payment.succeeded') {
-      const { userId, plan } = event.payload.metadata || {};
+      const { userId, plan } = event.payload?.metadata || {};
       if (userId && plan) {
-        // Update user plan in db
         const db = require('../db');
         const user = db.users.find(u => u.id === userId);
         if (user) user.plan = plan;
@@ -104,6 +110,7 @@ router.post('/webhook', express.raw({ type: 'application/json' }), async (req, r
     }
     res.json({ received: true });
   } catch (e) {
+    console.error('Webhook error:', e);
     res.status(400).json({ error: 'Webhook error' });
   }
 });
