@@ -18,8 +18,6 @@ body::after{content:'';display:none}
 .hidden{display:none!important}
 h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.1;color:#0a1628}
 .grad{background:linear-gradient(135deg,#0052cc,#0073e6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-
-/* BUTTONS */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 28px;border-radius:8px;font-family:'Inter',sans-serif;font-size:.92rem;font-weight:700;cursor:pointer;border:none;text-decoration:none;transition:all .2s;letter-spacing:.01em;white-space:nowrap}
 .btn:disabled{opacity:.4;cursor:not-allowed;transform:none!important}
 .btn-primary{background:#0052cc;color:#fff;box-shadow:0 4px 20px rgba(0,82,204,.3)}
@@ -33,8 +31,6 @@ h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.1;color:#0a1628}
 .btn-lg{padding:16px 36px;font-size:1rem;border-radius:10px}
 .btn-full{width:100%}
 .btn-sm{padding:8px 18px;font-size:.82rem}
-
-/* NAV */
 nav.top{position:sticky;top:0;z-index:200;background:#fff;border-bottom:2px solid #0052cc;box-shadow:0 2px 20px rgba(0,82,204,.08)}
 .nav-inner{display:flex;align-items:center;height:68px;gap:16px}
 .logo{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:#0052cc;cursor:pointer;text-decoration:none;letter-spacing:-.02em}
@@ -42,8 +38,6 @@ nav.top{position:sticky;top:0;z-index:200;background:#fff;border-bottom:2px soli
 .nav-links a{color:#4a5568;padding:8px 16px;border-radius:6px;font-size:.9rem;font-weight:600;text-decoration:none;cursor:pointer;transition:all .2s}
 .nav-links a:hover{color:#0052cc;background:rgba(0,82,204,.06)}
 .nav-actions{display:flex;gap:10px;align-items:center}
-
-/* SIDEBAR */
 .app-layout{display:flex;min-height:100vh}
 .sidebar{width:256px;background:#0a1628;border-right:none;position:fixed;top:0;left:0;height:100vh;z-index:90;display:flex;flex-direction:column;transition:transform .25s;box-shadow:4px 0 20px rgba(0,0,0,.15)}
 .sidebar-logo{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:#fff;padding:24px 22px 20px;border-bottom:1px solid rgba(255,255,255,.1);cursor:pointer;display:block;letter-spacing:-.02em}
@@ -64,11 +58,7 @@ nav.top{position:sticky;top:0;z-index:200;background:#fff;border-bottom:2px soli
 .app-header{display:flex;align-items:center;gap:16px;padding:22px 32px;border-bottom:1px solid #e2e8f0;background:#fff;position:sticky;top:0;z-index:10;box-shadow:0 1px 10px rgba(0,0,0,.06)}
 .app-header h1{font-family:'Playfair Display',serif;font-size:1.6rem;flex:1;color:#0a1628}
 .app-body{padding:32px}
-
-/* CARDS */
 .card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
-
-/* FORMS */
 .fgroup{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
 .fgroup label{font-size:.78rem;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.08em}
 .fgroup input,.fgroup select,.fgroup textarea{padding:12px 16px;border:2px solid #e2e8f0;border-radius:8px;background:#fff;font-family:'Inter',sans-serif;font-size:.95rem;color:#0a1628;transition:all .2s}
@@ -81,8 +71,6 @@ nav.top{position:sticky;top:0;z-index:200;background:#fff;border-bottom:2px soli
 .err-msg{background:#fef2f2;color:#dc2626;border:1px solid #fecaca;padding:11px 16px;border-radius:8px;font-size:.87rem;margin-bottom:14px;font-weight:600}
 .ok-msg{background:#f0fdf4;color:#059669;border:1px solid #a7f3d0;padding:11px 16px;border-radius:8px;font-size:.87rem;margin-bottom:14px;font-weight:600}
 .warn-msg{background:#fffbeb;color:#d97706;border:1px solid #fde68a;padding:14px 18px;border-radius:10px;font-size:.9rem;margin-bottom:18px}
-
-/* AUTH */
 .auth-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 20px;background:linear-gradient(135deg,#f8faff 0%,#e8f0fe 100%)}
 .auth-card{background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:48px;width:100%;max-width:450px;box-shadow:0 20px 60px rgba(0,82,204,.12);position:relative;overflow:hidden}
 .auth-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:#0052cc}
@@ -92,8 +80,6 @@ nav.top{position:sticky;top:0;z-index:200;background:#fff;border-bottom:2px soli
 .auth-alt{margin-top:20px;font-size:.87rem;color:#64748b;text-align:center}
 .auth-alt a{color:#0052cc;cursor:pointer;text-decoration:none;font-weight:600}
 .auth-alt a:hover{color:#003d99}
-
-/* STATS */
 .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;margin-bottom:30px}
 .stat-card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:24px 28px;position:relative;overflow:hidden;transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.05)}
 .stat-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:#0052cc;opacity:0;transition:opacity .3s}
@@ -175,17 +161,9 @@ nav.top{position:sticky;top:0;z-index:200;background:#fff;border-bottom:2px soli
 .pay-summary{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:28px;align-self:start;box-shadow:0 2px 12px rgba(0,0,0,.06)}
 .pay-form-card{background:#fff;border:2px solid #e2e8f0;border-radius:16px;padding:32px;position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08)}
 .pay-form-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:#0052cc}
-.pay-methods{display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
-.pay-btn{display:flex;align-items:center;gap:12px;padding:13px 18px;border-radius:10px;border:2px solid #e2e8f0;background:#f8faff;color:#0a1628;cursor:pointer;font-family:'Inter',sans-serif;font-size:.9rem;font-weight:600;transition:all .2s}
-.pay-btn:hover{border-color:#0052cc;background:#eff6ff}
-.or-div{text-align:center;color:#94a3b8;font-size:.8rem;position:relative;margin:6px 0}
-.or-div::before,.or-div::after{content:'';position:absolute;top:50%;width:44%;height:1px;background:#e2e8f0}
-.or-div::before{left:0}.or-div::after{right:0}
-.secure-note{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:14px;font-size:.75rem;color:#94a3b8}
 .back-btn{display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border-radius:8px;background:#f8faff;border:2px solid #e2e8f0;color:#64748b;font-size:.88rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif;text-decoration:none}
 .back-btn:hover{background:#eff6ff;color:#0052cc;border-color:#0052cc}
 .back-btn::before{content:'←';font-size:1rem}
-.trial-note{background:#f0fdf4;border:1px solid #a7f3d0;border-radius:10px;padding:14px 18px;margin-bottom:20px;font-size:.88rem;color:#059669;font-weight:600}
 .hero{min-height:92vh;display:flex;align-items:center;padding:80px 0 60px;background:linear-gradient(135deg,#fff 0%,#eff6ff 100%)}
 .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:#eff6ff;border:2px solid #0052cc;color:#0052cc;font-size:.82rem;font-weight:700;padding:7px 18px;border-radius:50px;margin-bottom:28px}
@@ -311,79 +289,13 @@ footer{border-top:2px solid #e2e8f0;padding:56px 0 28px;background:#0a1628}
     </div>
   </div>
   <div class="doc-preview">
-    <div class="dp-header"><div class="dp-icon">📄</div><div><div style="font-weight:600;font-size:.92rem;color:#f0f4ff">Contract_Final.pdf</div><div style="font-size:.76rem;color:rgba(226,232,248,.4);margin-top:2px">3 pages · AI signature ready</div></div></div>
+    <div class="dp-header"><div class="dp-icon">📄</div><div><div style="font-weight:600;font-size:.92rem;color:#0a1628">Contract_Final.pdf</div><div style="font-size:.76rem;color:#94a3b8;margin-top:2px">3 pages · AI signature ready</div></div></div>
     <div class="dp-lines"><div class="dp-line" style="width:100%"></div><div class="dp-line" style="width:82%"></div><div class="dp-line" style="width:100%"></div><div class="dp-line" style="width:64%"></div><div class="dp-line" style="width:90%"></div></div>
-    <div class="dp-sig">✍️ <span style="font-size:.84rem;color:rgba(226,232,248,.5)">AI detected signature zone</span></div>
-    <div class="dp-sig-done"><div class="dp-sig-bar"></div><span style="font-size:.82rem;color:#06d6a0;font-weight:600">✓ Signature placed by AI</span></div>
-    <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(6,214,160,.12);color:#06d6a0;border:1px solid rgba(6,214,160,.3);font-size:.74rem;font-weight:600;padding:4px 12px;border-radius:50px;margin-top:10px"><span style="width:6px;height:6px;border-radius:50%;background:#06d6a0;animation:blink 2s infinite;display:inline-block"></span>Ready to download</div>
+    <div class="dp-sig">✍️ <span style="font-size:.84rem;color:#64748b">AI detected signature zone</span></div>
+    <div class="dp-sig-done"><div class="dp-sig-bar"></div><span style="font-size:.82rem;color:#059669;font-weight:600">✓ Signature placed by AI</span></div>
+    <div style="display:inline-flex;align-items:center;gap:6px;background:#f0fdf4;color:#059669;border:1px solid #a7f3d0;font-size:.74rem;font-weight:600;padding:4px 12px;border-radius:50px;margin-top:10px"><span style="width:6px;height:6px;border-radius:50%;background:#059669;animation:blink 2s infinite;display:inline-block"></span>Ready to download</div>
   </div>
 </div></div></section>
-
-<!-- ── GET PAID SECTION ── -->
-<section style="padding:80px 0;background:linear-gradient(180deg,rgba(6,214,160,.04),transparent);border-top:1px solid rgba(255,255,255,.05)">
-  <div class="wrap">
-    <div style="text-align:center;margin-bottom:52px">
-      <div class="section-lbl" style="justify-content:center">💸 For you, the owner</div>
-      <h2 class="section-h" style="font-size:clamp(2rem,4vw,3rem)">You sign up users.<br/><em class="grad">We pay you automatically.</em></h2>
-      <p style="color:rgba(226,232,248,.45);font-size:1rem;max-width:500px;margin:0 auto">Every subscriber puts money directly into your bank account via Stripe — no invoices, no chasing, no delays.</p>
-    </div>
-
-    <!-- Money flow -->
-    <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:52px">
-      <div style="text-align:center;padding:20px 24px;background:rgba(99,91,255,.12);border:1px solid rgba(99,91,255,.3);border-radius:16px;min-width:130px">
-        <div style="font-size:2rem;margin-bottom:8px">👤</div>
-        <div style="font-weight:700;color:#a78bfa;font-size:.9rem">Subscriber</div>
-        <div style="font-size:.78rem;color:rgba(226,232,248,.4);margin-top:4px">pays R49/mo</div>
-      </div>
-      <div style="font-size:1.5rem;color:rgba(99,91,255,.5)">→</div>
-      <div style="text-align:center;padding:20px 24px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;min-width:130px">
-        <div style="font-size:2rem;margin-bottom:8px">🔒</div>
-        <div style="font-weight:700;color:#e2e8f8;font-size:.9rem">Stripe</div>
-        <div style="font-size:.78rem;color:rgba(226,232,248,.4);margin-top:4px">takes ~$0.44 fee</div>
-      </div>
-      <div style="font-size:1.5rem;color:rgba(99,91,255,.5)">→</div>
-      <div style="text-align:center;padding:20px 24px;background:rgba(6,214,160,.1);border:1px solid rgba(6,214,160,.3);border-radius:16px;min-width:130px">
-        <div style="font-size:2rem;margin-bottom:8px">🏦</div>
-        <div style="font-weight:700;color:#06d6a0;font-size:.9rem">Your Bank</div>
-        <div style="font-size:.78rem;color:rgba(226,232,248,.4);margin-top:4px">receives $4.55</div>
-      </div>
-      <div style="font-size:1.5rem;color:rgba(6,214,160,.5)">→</div>
-      <div style="text-align:center;padding:20px 24px;background:rgba(6,214,160,.15);border:1px solid rgba(6,214,160,.4);border-radius:16px;min-width:130px">
-        <div style="font-size:2rem;margin-bottom:8px">🎉</div>
-        <div style="font-weight:700;color:#06d6a0;font-size:.9rem">Every 2 days</div>
-        <div style="font-size:.78rem;color:rgba(226,232,248,.4);margin-top:4px">automatic payout</div>
-      </div>
-    </div>
-
-    <!-- Revenue cards -->
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:40px">
-      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:24px;text-align:center">
-        <div style="font-size:.74rem;font-weight:700;color:rgba(226,232,248,.35);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px">10 subscribers</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;background:linear-gradient(135deg,#a78bfa,#06d6a0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">$45<span style="font-size:1.2rem">/mo</span></div>
-        <div style="font-size:.76rem;color:rgba(226,232,248,.3);margin-top:4px">after fees</div>
-      </div>
-      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:24px;text-align:center">
-        <div style="font-size:.74rem;font-weight:700;color:rgba(226,232,248,.35);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px">100 subscribers</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;background:linear-gradient(135deg,#a78bfa,#06d6a0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">$455<span style="font-size:1.2rem">/mo</span></div>
-        <div style="font-size:.76rem;color:rgba(226,232,248,.3);margin-top:4px">after fees</div>
-      </div>
-      <div style="background:rgba(99,91,255,.1);border:1px solid rgba(99,91,255,.3);border-radius:16px;padding:24px;text-align:center">
-        <div style="font-size:.74rem;font-weight:700;color:#a78bfa;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px">500 subscribers</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;background:linear-gradient(135deg,#a78bfa,#06d6a0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">$2,275<span style="font-size:1.2rem">/mo</span></div>
-        <div style="font-size:.76rem;color:rgba(226,232,248,.3);margin-top:4px">after fees</div>
-      </div>
-      <div style="background:rgba(6,214,160,.08);border:1px solid rgba(6,214,160,.3);border-radius:16px;padding:24px;text-align:center">
-        <div style="font-size:.74rem;font-weight:700;color:#06d6a0;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px">1,000 subscribers</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;background:linear-gradient(135deg,#06d6a0,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">$4,550<span style="font-size:1.2rem">/mo</span></div>
-        <div style="font-size:.76px;color:rgba(226,232,248,.3);margin-top:4px">after fees</div>
-      </div>
-    </div>
-
-    <div style="text-align:center">
-      <button class="btn btn-emerald btn-lg" onclick="go('register')">Start earning today →</button>
-    </div>
-  </div>
-</section>
 
 <section class="steps-wrap"><div class="wrap">
   <div class="section-lbl">How it works</div>
@@ -408,13 +320,13 @@ footer{border-top:2px solid #e2e8f0;padding:56px 0 28px;background:#0a1628}
     <div class="feat-card"><span class="feat-ico">⬇️</span><h3>Instant Download</h3><p>Your professionally signed document is ready to download the moment you confirm placement.</p></div>
   </div>
 </div></section>
-<section style="padding:80px 0;background:rgba(99,91,255,.03);border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)"><div class="wrap">
+<section style="padding:80px 0;background:#f8faff;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0"><div class="wrap">
   <div class="section-lbl">Testimonials</div>
   <h2 class="section-h" style="margin-bottom:48px">People love SignForge.</h2>
   <div class="testi-grid">
     <div class="testi"><div class="stars">★★★★★</div><p>"I used to spend 20 minutes printing, signing, scanning. Now I do it in 30 seconds. Life-changing for my workflow."</p><div class="t-author"><div class="t-avatar">SJ</div><div><div class="t-name">Sarah Johnson</div><div class="t-role">Freelance Consultant</div></div></div></div>
-    <div class="testi"><div class="stars">★★★★★</div><p>"The AI placement is incredible. I just type 'bottom right' and it's done perfectly every time. Worth every penny."</p><div class="t-author"><div class="t-avatar" style="background:linear-gradient(135deg,#06d6a0,#059669)">MK</div><div><div class="t-name">Marcus Kim</div><div class="t-role">Real Estate Agent</div></div></div></div>
-    <div class="testi"><div class="stars">★★★★★</div><p>"At R49 a month this is a steal. I sign dozens of documents weekly. The camera signature feature is amazing."</p><div class="t-author"><div class="t-avatar" style="background:linear-gradient(135deg,#ff489a,#9333ea)">AT</div><div><div class="t-name">Aisha Tran</div><div class="t-role">Business Owner</div></div></div></div>
+    <div class="testi"><div class="stars">★★★★★</div><p>"The AI placement is incredible. I just type 'bottom right' and it's done perfectly every time. Worth every penny."</p><div class="t-author"><div class="t-avatar" style="background:linear-gradient(135deg,#059669,#047857)">MK</div><div><div class="t-name">Marcus Kim</div><div class="t-role">Real Estate Agent</div></div></div></div>
+    <div class="testi"><div class="stars">★★★★★</div><p>"At R49 a month this is a steal. I sign dozens of documents weekly. The camera signature feature is amazing."</p><div class="t-author"><div class="t-avatar" style="background:linear-gradient(135deg,#0052cc,#0073e6)">AT</div><div><div class="t-name">Aisha Tran</div><div class="t-role">Business Owner</div></div></div></div>
   </div>
 </div></section>
 <section class="cta-sec"><div class="wrap"><div class="cta-box">
@@ -462,7 +374,7 @@ footer{border-top:2px solid #e2e8f0;padding:56px 0 28px;background:#0a1628}
 <div id="pg-pricing" class="page">
 <nav class="top"><div class="wrap nav-inner"><span class="logo" onclick="go('home')">SignForge</span><div class="nav-links"><a onclick="go('features')">Features</a><a onclick="go('pricing')">Pricing</a><a onclick="go('how')">How it works</a></div><div class="nav-actions"><button class="back-btn" onclick="go('home')">Back to Home</button><button class="btn btn-ghost" onclick="go('login')">Log in</button><button class="btn btn-primary" onclick="go('register')">Get Started →</button></div></div></nav>
 <div style="padding:80px 0"><div class="wrap">
-  <div style="text-align:center;margin-bottom:16px"><div class="section-lbl" style="justify-content:center">Simple pricing</div><h2 class="section-h" style="font-size:clamp(2.2rem,5vw,3.5rem)">Honest pricing.<br/><em class="grad">No surprises.</em></h2><p style="color:rgba(226,232,248,.45);font-size:1rem;max-width:480px;margin:0 auto 60px">Start free. Upgrade when you need more. Cancel anytime.</p></div>
+  <div style="text-align:center;margin-bottom:16px"><div class="section-lbl" style="justify-content:center">Simple pricing</div><h2 class="section-h" style="font-size:clamp(2.2rem,5vw,3.5rem)">Honest pricing.<br/><em class="grad">No surprises.</em></h2><p style="color:#64748b;font-size:1rem;max-width:480px;margin:0 auto 60px">Start free. Upgrade when you need more. Cancel anytime.</p></div>
   <div class="pricing-grid">
     <div class="price-card">
       <div class="plan-name">Free</div>
@@ -508,7 +420,7 @@ footer{border-top:2px solid #e2e8f0;padding:56px 0 28px;background:#0a1628}
       <button class="btn btn-emerald btn-full" onclick="go('checkout','pro')">Get Pro →</button>
     </div>
   </div>
-  <div style="text-align:center;margin-top:48px;color:rgba(226,232,248,.35);font-size:.88rem">🔒 Secured by Stripe · Cancel anytime · No hidden fees</div>
+  <div style="text-align:center;margin-top:48px;color:#94a3b8;font-size:.88rem">🔒 Secured by Yoco · Cancel anytime · No hidden fees</div>
 </div></div>
 </div>
 
@@ -518,11 +430,11 @@ footer{border-top:2px solid #e2e8f0;padding:56px 0 28px;background:#0a1628}
 <div style="padding:80px 0"><div class="wrap">
   <div style="text-align:center;margin-bottom:64px"><div class="section-lbl" style="justify-content:center">The process</div><h2 class="section-h" style="font-size:clamp(2.2rem,5vw,3.5rem)">How SignForge works</h2></div>
   <div style="max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:28px">
-    <div class="card" style="display:flex;gap:20px;align-items:flex-start"><div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#635bff,#4f46e5);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;flex-shrink:0;color:#fff">1</div><div><h3 style="font-size:1.1rem;margin-bottom:8px;font-family:'Outfit',sans-serif;font-weight:700;color:#f0f4ff">Create your free account</h3><p style="color:rgba(226,232,248,.5);font-size:.9rem;line-height:1.7">Sign up with your email. No credit card required. You get 1 free document signing immediately.</p></div></div>
-    <div class="card" style="display:flex;gap:20px;align-items:flex-start"><div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#635bff,#4f46e5);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;flex-shrink:0;color:#fff">2</div><div><h3 style="font-size:1.1rem;margin-bottom:8px;font-family:'Outfit',sans-serif;font-weight:700;color:#f0f4ff">Upload your document</h3><p style="color:rgba(226,232,248,.5);font-size:.9rem;line-height:1.7">Drag and drop any PDF. The document loads instantly in the viewer so you can see every page.</p></div></div>
-    <div class="card" style="display:flex;gap:20px;align-items:flex-start"><div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#635bff,#4f46e5);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;flex-shrink:0;color:#fff">3</div><div><h3 style="font-size:1.1rem;margin-bottom:8px;font-family:'Outfit',sans-serif;font-weight:700;color:#f0f4ff">Capture your signature</h3><p style="color:rgba(226,232,248,.5);font-size:.9rem;line-height:1.7">Open the camera, hold your signed paper up, and tap Capture. Or draw directly on screen.</p></div></div>
-    <div class="card" style="display:flex;gap:20px;align-items:flex-start"><div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#635bff,#4f46e5);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;flex-shrink:0;color:#fff">4</div><div><h3 style="font-size:1.1rem;margin-bottom:8px;font-family:'Outfit',sans-serif;font-weight:700;color:#f0f4ff">Tell the AI where to sign</h3><p style="color:rgba(226,232,248,.5);font-size:.9rem;line-height:1.7">Type "bottom right", "above my printed name", or "next to the date". Click and watch the AI place it.</p></div></div>
-    <div class="card" style="display:flex;gap:20px;align-items:flex-start"><div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#06d6a0,#059669);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;flex-shrink:0;color:#fff">5</div><div><h3 style="font-size:1.1rem;margin-bottom:8px;font-family:'Outfit',sans-serif;font-weight:700;color:#f0f4ff">Download your signed document</h3><p style="color:rgba(226,232,248,.5);font-size:.9rem;line-height:1.7">Click Sign & Download. Your professionally signed PDF is ready instantly.</p></div></div>
+    <div class="card" style="display:flex;gap:20px;align-items:flex-start"><div style="width:48px;height:48px;border-radius:50%;background:#0052cc;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;flex-shrink:0;color:#fff">1</div><div><h3 style="font-size:1.1rem;margin-bottom:8px;font-weight:700;color:#0a1628">Create your free account</h3><p style="color:#64748b;font-size:.9rem;line-height:1.7">Sign up with your email. No credit card required. You get 1 free document signing immediately.</p></div></div>
+    <div class="card" style="display:flex;gap:20px;align-items:flex-start"><div style="width:48px;height:48px;border-radius:50%;background:#0052cc;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;flex-shrink:0;color:#fff">2</div><div><h3 style="font-size:1.1rem;margin-bottom:8px;font-weight:700;color:#0a1628">Upload your document</h3><p style="color:#64748b;font-size:.9rem;line-height:1.7">Drag and drop any PDF. The document loads instantly in the viewer so you can see every page.</p></div></div>
+    <div class="card" style="display:flex;gap:20px;align-items:flex-start"><div style="width:48px;height:48px;border-radius:50%;background:#0052cc;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;flex-shrink:0;color:#fff">3</div><div><h3 style="font-size:1.1rem;margin-bottom:8px;font-weight:700;color:#0a1628">Capture your signature</h3><p style="color:#64748b;font-size:.9rem;line-height:1.7">Open the camera, hold your signed paper up, and tap Capture. Or draw directly on screen.</p></div></div>
+    <div class="card" style="display:flex;gap:20px;align-items:flex-start"><div style="width:48px;height:48px;border-radius:50%;background:#0052cc;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;flex-shrink:0;color:#fff">4</div><div><h3 style="font-size:1.1rem;margin-bottom:8px;font-weight:700;color:#0a1628">Tell the AI where to sign</h3><p style="color:#64748b;font-size:.9rem;line-height:1.7">Type "bottom right", "above my printed name", or "next to the date". Click and watch the AI place it.</p></div></div>
+    <div class="card" style="display:flex;gap:20px;align-items:flex-start"><div style="width:48px;height:48px;border-radius:50%;background:#059669;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;flex-shrink:0;color:#fff">5</div><div><h3 style="font-size:1.1rem;margin-bottom:8px;font-weight:700;color:#0a1628">Download your signed document</h3><p style="color:#64748b;font-size:.9rem;line-height:1.7">Click Sign & Download. Your professionally signed PDF is ready instantly.</p></div></div>
   </div>
   <div style="text-align:center;margin-top:56px"><button class="btn btn-primary btn-lg" onclick="go('register')">Try it now — it's free →</button></div>
 </div></div>
@@ -534,9 +446,8 @@ footer{border-top:2px solid #e2e8f0;padding:56px 0 28px;background:#0a1628}
 <div style="padding:80px 0"><div class="wrap" style="max-width:640px">
   <div class="section-lbl">Get in touch</div>
   <h2 class="section-h" style="margin-bottom:12px">Contact us</h2>
-  <p style="color:rgba(226,232,248,.45);margin-bottom:40px">Have a question or issue? We respond within 24 hours.</p>
-  <div class="card" style="position:relative;overflow:hidden">
-    <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#635bff,#06d6a0,transparent)"></div>
+  <p style="color:#64748b;margin-bottom:40px">Have a question or issue? We respond within 24 hours.</p>
+  <div class="card">
     <div id="contact-ok" class="ok-msg hidden">✓ Message sent! We'll get back to you within 24 hours.</div>
     <div class="fgroup"><label>Your Name</label><input id="c-name" type="text" placeholder="Jane Smith"/></div>
     <div class="fgroup"><label>Email</label><input id="c-email" type="email" placeholder="you@example.com"/></div>
@@ -552,13 +463,13 @@ footer{border-top:2px solid #e2e8f0;padding:56px 0 28px;background:#0a1628}
 <nav class="top"><div class="wrap nav-inner"><span class="logo" onclick="go('home')">SignForge</span><div class="nav-actions"><button class="btn btn-ghost" onclick="go('home')">← Back</button></div></div></nav>
 <div style="padding:64px 0"><div class="wrap" style="max-width:740px">
   <h1 style="font-size:2.2rem;margin-bottom:10px">Terms of Service</h1>
-  <p style="color:rgba(226,232,248,.35);margin-bottom:40px;font-size:.88rem">Last updated: January 2025</p>
+  <p style="color:#94a3b8;margin-bottom:40px;font-size:.88rem">Last updated: January 2025</p>
   <div style="display:flex;flex-direction:column;gap:28px">
-    <div><h2 style="font-size:1.1rem;color:#a78bfa;margin-bottom:10px;font-family:'Outfit',sans-serif;font-weight:700">1. Acceptance of Terms</h2><p style="color:rgba(226,232,248,.55);line-height:1.8;font-size:.92rem">By using SignForge, you agree to these terms.</p></div>
-    <div><h2 style="font-size:1.1rem;color:#a78bfa;margin-bottom:10px;font-family:'Outfit',sans-serif;font-weight:700">2. Service Description</h2><p style="color:rgba(226,232,248,.55);line-height:1.8;font-size:.92rem">SignForge provides AI-powered document signing tools. We offer a free trial (1 document) and paid plans at R19/month (Starter) and R49/month (Pro).</p></div>
-    <div><h2 style="font-size:1.1rem;color:#a78bfa;margin-bottom:10px;font-family:'Outfit',sans-serif;font-weight:700">3. Payments & Refunds</h2><p style="color:rgba(226,232,248,.55);line-height:1.8;font-size:.92rem">Payments processed by Stripe. Subscriptions auto-renew monthly. Cancel anytime. Refunds considered within 7 days of purchase.</p></div>
-    <div><h2 style="font-size:1.1rem;color:#a78bfa;margin-bottom:10px;font-family:'Outfit',sans-serif;font-weight:700">4. Data & Privacy</h2><p style="color:rgba(226,232,248,.55);line-height:1.8;font-size:.92rem">Uploaded documents are automatically deleted within 24 hours. We never sell your data.</p></div>
-    <div><h2 style="font-size:1.1rem;color:#a78bfa;margin-bottom:10px;font-family:'Outfit',sans-serif;font-weight:700">5. Limitation of Liability</h2><p style="color:rgba(226,232,248,.55);line-height:1.8;font-size:.92rem">SignForge is provided "as is". We are not liable for the legal validity of electronically signed documents in your jurisdiction.</p></div>
+    <div><h2 style="font-size:1.1rem;color:#0052cc;margin-bottom:10px;font-weight:700">1. Acceptance of Terms</h2><p style="color:#64748b;line-height:1.8;font-size:.92rem">By using SignForge, you agree to these terms.</p></div>
+    <div><h2 style="font-size:1.1rem;color:#0052cc;margin-bottom:10px;font-weight:700">2. Service Description</h2><p style="color:#64748b;line-height:1.8;font-size:.92rem">SignForge provides AI-powered document signing tools. We offer a free trial (1 document) and paid plans at R19/month (Starter) and R49/month (Pro).</p></div>
+    <div><h2 style="font-size:1.1rem;color:#0052cc;margin-bottom:10px;font-weight:700">3. Payments & Refunds</h2><p style="color:#64748b;line-height:1.8;font-size:.92rem">Payments processed by Yoco. Subscriptions auto-renew monthly. Cancel anytime. Refunds considered within 7 days of purchase.</p></div>
+    <div><h2 style="font-size:1.1rem;color:#0052cc;margin-bottom:10px;font-weight:700">4. Data & Privacy</h2><p style="color:#64748b;line-height:1.8;font-size:.92rem">Uploaded documents are automatically deleted within 24 hours. We never sell your data.</p></div>
+    <div><h2 style="font-size:1.1rem;color:#0052cc;margin-bottom:10px;font-weight:700">5. Limitation of Liability</h2><p style="color:#64748b;line-height:1.8;font-size:.92rem">SignForge is provided "as is". We are not liable for the legal validity of electronically signed documents in your jurisdiction.</p></div>
   </div>
 </div></div>
 </div>
@@ -568,12 +479,12 @@ footer{border-top:2px solid #e2e8f0;padding:56px 0 28px;background:#0a1628}
 <nav class="top"><div class="wrap nav-inner"><span class="logo" onclick="go('home')">SignForge</span><div class="nav-actions"><button class="btn btn-ghost" onclick="go('home')">← Back</button></div></div></nav>
 <div style="padding:64px 0"><div class="wrap" style="max-width:740px">
   <h1 style="font-size:2.2rem;margin-bottom:10px">Privacy Policy</h1>
-  <p style="color:rgba(226,232,248,.35);margin-bottom:40px;font-size:.88rem">Last updated: January 2025</p>
+  <p style="color:#94a3b8;margin-bottom:40px;font-size:.88rem">Last updated: January 2025</p>
   <div style="display:flex;flex-direction:column;gap:28px">
-    <div><h2 style="font-size:1.1rem;color:#a78bfa;margin-bottom:10px;font-family:'Outfit',sans-serif;font-weight:700">What we collect</h2><p style="color:rgba(226,232,248,.55);line-height:1.8;font-size:.92rem">Name, email address, and payment information (processed by Stripe — we never store your card details).</p></div>
-    <div><h2 style="font-size:1.1rem;color:#a78bfa;margin-bottom:10px;font-family:'Outfit',sans-serif;font-weight:700">Documents & Signatures</h2><p style="color:rgba(226,232,248,.55);line-height:1.8;font-size:.92rem">Documents you upload are temporarily processed and automatically deleted within 24 hours.</p></div>
-    <div><h2 style="font-size:1.1rem;color:#a78bfa;margin-bottom:10px;font-family:'Outfit',sans-serif;font-weight:700">Your rights (GDPR)</h2><p style="color:rgba(226,232,248,.55);line-height:1.8;font-size:.92rem">You have the right to access, correct, or delete your data at any time. Contact us at hello@signforge.app.</p></div>
-    <div><h2 style="font-size:1.1rem;color:#a78bfa;margin-bottom:10px;font-family:'Outfit',sans-serif;font-weight:700">No advertising</h2><p style="color:rgba(226,232,248,.55);line-height:1.8;font-size:.92rem">We do not sell your data to third parties or use it for advertising. Ever.</p></div>
+    <div><h2 style="font-size:1.1rem;color:#0052cc;margin-bottom:10px;font-weight:700">What we collect</h2><p style="color:#64748b;line-height:1.8;font-size:.92rem">Name, email address, and payment information (processed by Yoco — we never store your card details).</p></div>
+    <div><h2 style="font-size:1.1rem;color:#0052cc;margin-bottom:10px;font-weight:700">Documents & Signatures</h2><p style="color:#64748b;line-height:1.8;font-size:.92rem">Documents you upload are temporarily processed and automatically deleted within 24 hours.</p></div>
+    <div><h2 style="font-size:1.1rem;color:#0052cc;margin-bottom:10px;font-weight:700">Your rights (GDPR)</h2><p style="color:#64748b;line-height:1.8;font-size:.92rem">You have the right to access, correct, or delete your data at any time. Contact us at hello@signforge.app.</p></div>
+    <div><h2 style="font-size:1.1rem;color:#0052cc;margin-bottom:10px;font-weight:700">No advertising</h2><p style="color:#64748b;line-height:1.8;font-size:.92rem">We do not sell your data to third parties or use it for advertising. Ever.</p></div>
   </div>
 </div></div>
 </div>
@@ -614,7 +525,7 @@ footer{border-top:2px solid #e2e8f0;padding:56px 0 28px;background:#0a1628}
     <div class="fgroup"><label>Full Name</label><input id="r-name" type="text" placeholder="Jane Smith" required/></div>
     <div class="fgroup"><label>Email</label><input id="r-email" type="email" placeholder="you@example.com" required/></div>
     <div class="fgroup"><label>Password</label><input id="r-pw" type="password" placeholder="Minimum 8 characters" required/></div>
-    <div class="fcheck"><input type="checkbox" id="r-terms" required/><label for="r-terms">I agree to the <a onclick="go('terms')" style="color:#a78bfa;cursor:pointer">Terms of Service</a> and <a onclick="go('privacy')" style="color:#a78bfa;cursor:pointer">Privacy Policy</a></label></div>
+    <div class="fcheck"><input type="checkbox" id="r-terms" required/><label for="r-terms">I agree to the <a onclick="go('terms')" style="color:#0052cc;cursor:pointer">Terms of Service</a> and <a onclick="go('privacy')" style="color:#0052cc;cursor:pointer">Privacy Policy</a></label></div>
     <button type="submit" class="btn btn-primary btn-full" id="reg-btn">Create free account</button>
   </form>
   <p class="auth-alt"><a onclick="go('login')">Already have an account? Sign in →</a></p>
@@ -654,81 +565,84 @@ footer{border-top:2px solid #e2e8f0;padding:56px 0 28px;background:#0a1628}
 <!-- CHECKOUT -->
 <div id="pg-checkout" class="page">
 <nav class="top"><div class="wrap nav-inner"><span class="logo" onclick="go('home')">SignForge</span><div class="nav-actions"><button class="back-btn" onclick="go('pricing')">Back to Pricing</button></div></div></nav>
-<div style="padding:60px 0"><div class="wrap">
+<div style="padding:60px 0;background:#f8faff"><div class="wrap">
   <div style="text-align:center;margin-bottom:48px">
-    <h1 style="font-size:2rem;color:#f0f4ff;margin-bottom:8px">Complete your subscription</h1>
-    <p style="color:rgba(226,232,248,.4)">Secure payment powered by Yoco · Cancel anytime</p>
+    <h1 style="font-size:2rem;color:#0a1628;margin-bottom:8px">Complete your subscription</h1>
+    <p style="color:#64748b">Secure payment powered by Yoco · Cancel anytime</p>
   </div>
   <div class="pay-layout">
     <!-- LEFT: Plan summary -->
     <div class="pay-summary">
-      <div id="co-plan-badge" style="font-size:.76rem;font-weight:700;color:rgba(226,232,248,.4);text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px">Pro Plan</div>
+      <div id="co-plan-badge" style="font-size:.76rem;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px">Pro Plan</div>
       <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:6px">
-        <span id="co-price" style="font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;background:linear-gradient(135deg,#a78bfa,#06d6a0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">R49</span>
-        <span style="color:rgba(226,232,248,.4)">/month</span>
+        <span id="co-price" style="font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:#0052cc">R49</span>
+        <span style="color:#64748b;font-weight:600">/month</span>
       </div>
-      <p style="color:rgba(226,232,248,.4);font-size:.84rem;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.07)">Billed monthly · Cancel anytime</p>
+      <p style="color:#64748b;font-size:.84rem;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid #e2e8f0">Billed monthly · Cancel anytime</p>
       <div id="co-feats" style="display:flex;flex-direction:column;gap:10px">
-        <div style="display:flex;align-items:center;gap:10px;font-size:.9rem;color:rgba(226,232,248,.7)"><span style="color:#06d6a0">✓</span> Unlimited documents</div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:.9rem;color:rgba(226,232,248,.7)"><span style="color:#06d6a0">✓</span> AI signature placement</div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:.9rem;color:rgba(226,232,248,.7)"><span style="color:#06d6a0">✓</span> Camera & draw signature</div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:.9rem;color:rgba(226,232,248,.7)"><span style="color:#06d6a0">✓</span> Document history</div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:.9rem;color:rgba(226,232,248,.7)"><span style="color:#06d6a0">✓</span> Priority support</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:.9rem;color:#374151"><span style="color:#059669;font-weight:700">✓</span> Unlimited documents</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:.9rem;color:#374151"><span style="color:#059669;font-weight:700">✓</span> AI signature placement</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:.9rem;color:#374151"><span style="color:#059669;font-weight:700">✓</span> Camera & draw signature</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:.9rem;color:#374151"><span style="color:#059669;font-weight:700">✓</span> Document history</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:.9rem;color:#374151"><span style="color:#059669;font-weight:700">✓</span> Priority support</div>
       </div>
-
-      <!-- Yoco trust badge -->
-      <div style="margin-top:28px;padding:16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px">
+      <div style="margin-top:28px;padding:16px;background:#f8faff;border:1px solid #e2e8f0;border-radius:12px">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
-          <div style="width:36px;height:36px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1rem;color:#000;flex-shrink:0">Y</div>
+          <div style="width:36px;height:36px;background:#0066ff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1rem;color:#fff;flex-shrink:0">Y</div>
           <div>
-            <div style="font-weight:700;color:#f0f4ff;font-size:.9rem">Powered by Yoco</div>
-            <div style="font-size:.74rem;color:rgba(226,232,248,.4)">South Africa's trusted payment platform</div>
+            <div style="font-weight:700;color:#0a1628;font-size:.9rem">Powered by Yoco</div>
+            <div style="font-size:.74rem;color:#64748b">South Africa's trusted payment platform</div>
           </div>
         </div>
         <div style="display:flex;gap:8px;flex-wrap:wrap">
-          <span style="background:rgba(6,214,160,.1);color:#06d6a0;border:1px solid rgba(6,214,160,.2);padding:4px 10px;border-radius:50px;font-size:.72rem;font-weight:600">🔒 SSL Secured</span>
-          <span style="background:rgba(6,214,160,.1);color:#06d6a0;border:1px solid rgba(6,214,160,.2);padding:4px 10px;border-radius:50px;font-size:.72rem;font-weight:600">✓ PCI Compliant</span>
-          <span style="background:rgba(6,214,160,.1);color:#06d6a0;border:1px solid rgba(6,214,160,.2);padding:4px 10px;border-radius:50px;font-size:.72rem;font-weight:600">🇿🇦 SA Trusted</span>
+          <span style="background:#f0fdf4;color:#059669;border:1px solid #a7f3d0;padding:4px 10px;border-radius:50px;font-size:.72rem;font-weight:600">🔒 SSL Secured</span>
+          <span style="background:#f0fdf4;color:#059669;border:1px solid #a7f3d0;padding:4px 10px;border-radius:50px;font-size:.72rem;font-weight:600">✓ PCI Compliant</span>
+          <span style="background:#f0fdf4;color:#059669;border:1px solid #a7f3d0;padding:4px 10px;border-radius:50px;font-size:.72rem;font-weight:600">🇿🇦 SA Trusted</span>
         </div>
       </div>
     </div>
 
     <!-- RIGHT: Payment form -->
     <div class="pay-form-card">
-      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#0066ff,#00c4ff)"></div>
       <div id="co-err" class="err-msg hidden"></div>
       <div id="co-ok" class="ok-msg hidden"></div>
-
-      <!-- Yoco header -->
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.08)">
-        <div style="width:44px;height:44px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.3rem;color:#0066ff;flex-shrink:0">Y</div>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid #e2e8f0">
+        <div style="width:44px;height:44px;background:#0066ff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.3rem;color:#fff;flex-shrink:0">Y</div>
         <div>
-          <div style="font-weight:700;color:#f0f4ff">Pay with Yoco</div>
-          <div style="font-size:.8rem;color:rgba(226,232,248,.4)">Visa · Mastercard · EFT · Instant EFT</div>
+          <div style="font-weight:700;color:#0a1628;font-size:1rem">Pay with Yoco</div>
+          <div style="font-size:.8rem;color:#64748b">Visa · Mastercard · EFT · Instant EFT</div>
         </div>
       </div>
-
-      <!-- Accepted cards -->
       <div style="display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap">
-        <div style="padding:6px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;font-size:.78rem;font-weight:700;color:#e2e8f8">VISA</div>
-        <div style="padding:6px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;font-size:.78rem;font-weight:700;color:#e2e8f8">Mastercard</div>
-        <div style="padding:6px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;font-size:.78rem;font-weight:700;color:#06d6a0">EFT</div>
-        <div style="padding:6px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;font-size:.78rem;font-weight:700;color:#06d6a0">Instant EFT</div>
+        <div style="padding:6px 14px;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:8px;font-size:.78rem;font-weight:700;color:#0a1628">VISA</div>
+        <div style="padding:6px 14px;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:8px;font-size:.78rem;font-weight:700;color:#0a1628">Mastercard</div>
+        <div style="padding:6px 14px;background:#f0fdf4;border:1px solid #a7f3d0;border-radius:8px;font-size:.78rem;font-weight:700;color:#059669">EFT</div>
+        <div style="padding:6px 14px;background:#f0fdf4;border:1px solid #a7f3d0;border-radius:8px;font-size:.78rem;font-weight:700;color:#059669">Instant EFT</div>
       </div>
-
       <form id="co-form">
-        <div class="fgroup"><label>Name on card</label><input type="text" id="co-name" placeholder="Seagin Govender" required/></div>
-        <div class="fgroup"><label>Card Number</label><input type="text" id="co-num" placeholder="1234 5678 9012 3456" maxlength="19" required/></div>
-        <div class="form-row">
-          <div class="fgroup"><label>Expiry</label><input type="text" id="co-exp" placeholder="MM/YY" maxlength="5" required/></div>
-          <div class="fgroup"><label>CVV</label><input type="text" id="co-cvc" placeholder="123" maxlength="4" required/></div>
+        <div class="fgroup">
+          <label style="color:#374151;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em">Name on card</label>
+          <input type="text" id="co-name" placeholder="Your full name" required/>
         </div>
-        <button type="submit" class="btn btn-full" id="co-btn" style="margin-top:8px;background:linear-gradient(135deg,#0066ff,#00c4ff);color:#fff;padding:15px;font-size:1rem;font-weight:700;border-radius:12px;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(0,102,255,.4)">
+        <div class="fgroup">
+          <label style="color:#374151;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em">Card Number</label>
+          <input type="text" id="co-num" placeholder="1234 5678 9012 3456" maxlength="19" required/>
+        </div>
+        <div class="form-row">
+          <div class="fgroup">
+            <label style="color:#374151;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em">Expiry</label>
+            <input type="text" id="co-exp" placeholder="MM/YY" maxlength="5" required/>
+          </div>
+          <div class="fgroup">
+            <label style="color:#374151;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em">CVV</label>
+            <input type="text" id="co-cvc" placeholder="123" maxlength="4" required/>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-full" id="co-btn" style="margin-top:8px;background:linear-gradient(135deg,#0052cc,#0073e6);color:#fff;padding:15px;font-size:1rem;font-weight:700;border-radius:12px;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(0,82,204,.4)">
           Pay with Yoco →
         </button>
       </form>
-
-      <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:16px;font-size:.76rem;color:rgba(226,232,248,.3)">
+      <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:16px;font-size:.76rem;color:#94a3b8">
         🔒 Secured by Yoco · PCI DSS Compliant · Your card details are never stored
       </div>
     </div>
@@ -740,8 +654,8 @@ footer{border-top:2px solid #e2e8f0;padding:56px 0 28px;background:#0a1628}
 <div id="pg-payment-success" class="page">
 <div class="auth-wrap"><div class="auth-card" style="text-align:center;max-width:500px">
   <div style="font-size:4rem;margin-bottom:18px">🎉</div>
-  <h1 style="font-size:1.8rem;color:#06d6a0;margin-bottom:10px">Payment Successful!</h1>
-  <p style="color:rgba(226,232,248,.5);margin-bottom:28px;line-height:1.7">Your subscription is now active. You have <strong style="color:#a78bfa" id="ps-plan-text">unlimited</strong> document signings per month.</p>
+  <h1 style="font-size:1.8rem;color:#059669;margin-bottom:10px">Payment Successful!</h1>
+  <p style="color:#64748b;margin-bottom:28px;line-height:1.7">Your subscription is now active. You have <strong style="color:#0052cc" id="ps-plan-text">unlimited</strong> document signings per month.</p>
   <button class="btn btn-emerald btn-lg btn-full" onclick="go('dashboard')">Go to Dashboard →</button>
 </div></div>
 </div>
@@ -800,24 +714,22 @@ footer{border-top:2px solid #e2e8f0;padding:56px 0 28px;background:#0a1628}
       <div id="trial-wall" class="hidden">
         <div style="text-align:center;padding:60px 20px">
           <div style="font-size:3rem;margin-bottom:18px">🔒</div>
-          <h2 style="color:#f0f4ff;margin-bottom:12px">Your free trial has been used</h2>
-          <p style="color:rgba(226,232,248,.5);margin-bottom:28px">Upgrade to keep signing. Start at just R19/month.</p>
+          <h2 style="color:#0a1628;margin-bottom:12px">Your free trial has been used</h2>
+          <p style="color:#64748b;margin-bottom:28px">Upgrade to keep signing. Start at just R19/month.</p>
           <button class="btn btn-primary btn-lg" onclick="go('billing')">View plans & upgrade →</button>
         </div>
       </div>
       <div id="sign-form">
-        <!-- STEP 1 -->
         <div class="sign-step">
           <div class="step-hdr"><div class="step-num">1</div><h2>Upload your document</h2></div>
           <label class="drop-zone" id="drop-z">
             <input type="file" id="pdf-inp" accept="application/pdf,image/*" hidden/>
             <div class="drop-icon">📄</div>
             <p>Drop your PDF here or <strong>click to browse</strong></p>
-            <p style="font-size:.78rem;color:rgba(226,232,248,.25)">PDF · JPG · PNG · Max 20MB</p>
+            <p style="font-size:.78rem;color:#94a3b8">PDF · JPG · PNG · Max 20MB</p>
           </label>
           <div id="pdf-status" class="hidden" style="margin-top:12px"></div>
         </div>
-        <!-- STEP 2 -->
         <div class="sign-step">
           <div class="step-hdr"><div class="step-num">2</div><h2>Add your signature</h2></div>
           <div class="tab-bar">
@@ -829,10 +741,10 @@ footer{border-top:2px solid #e2e8f0;padding:56px 0 28px;background:#0a1628}
             <canvas id="sig-canvas" width="500" height="160"></canvas>
             <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:10px">
               <div class="swatches">
-                <div class="swatch active" style="background:#e2e8f8" data-c="#e2e8f8" onclick="setClr(this)"></div>
-                <div class="swatch" style="background:#635bff" data-c="#635bff" onclick="setClr(this)"></div>
-                <div class="swatch" style="background:#06d6a0" data-c="#06d6a0" onclick="setClr(this)"></div>
-                <div class="swatch" style="background:#ff4f7b" data-c="#ff4f7b" onclick="setClr(this)"></div>
+                <div class="swatch active" style="background:#0a1628" data-c="#0a1628" onclick="setClr(this)"></div>
+                <div class="swatch" style="background:#0052cc" data-c="#0052cc" onclick="setClr(this)"></div>
+                <div class="swatch" style="background:#059669" data-c="#059669" onclick="setClr(this)"></div>
+                <div class="swatch" style="background:#dc2626" data-c="#dc2626" onclick="setClr(this)"></div>
                 <div class="swatch" style="background:#111" data-c="#111" onclick="setClr(this)"></div>
               </div>
               <div style="display:flex;gap:8px">
@@ -862,13 +774,12 @@ footer{border-top:2px solid #e2e8f0;padding:56px 0 28px;background:#0a1628}
           </div>
           <div id="sig-ok" class="sig-ready-banner hidden">✅ Signature captured — scroll down to place it</div>
         </div>
-        <!-- STEP 3 -->
         <div class="sign-step">
           <div class="step-hdr"><div class="step-num">3</div><h2>Place your signature & download</h2></div>
-          <div style="background:linear-gradient(135deg,rgba(99,91,255,.12),rgba(6,214,160,.06));border:1.5px solid rgba(99,91,255,.3);border-radius:14px;padding:20px;margin-bottom:18px">
-            <div style="font-size:.78rem;font-weight:700;color:#a78bfa;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px">🤖 Tell the AI where to sign</div>
+          <div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:14px;padding:20px;margin-bottom:18px">
+            <div style="font-size:.78rem;font-weight:700;color:#0052cc;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px">🤖 Tell the AI where to sign</div>
             <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
-              <input id="ai-instruction" type="text" placeholder='e.g. "bottom right", "above my name", "next to the date"' style="flex:1;min-width:200px;padding:13px 16px;border:1.5px solid rgba(99,91,255,.3);border-radius:10px;background:rgba(7,9,15,.6);color:#e2e8f8;font-family:'Outfit',sans-serif;font-size:.95rem"/>
+              <input id="ai-instruction" type="text" placeholder='e.g. "bottom right", "above my name", "next to the date"' style="flex:1;min-width:200px;padding:13px 16px;border:1.5px solid #bfdbfe;border-radius:10px;background:#fff;color:#0a1628;font-family:'Inter',sans-serif;font-size:.95rem"/>
               <button class="btn btn-primary" onclick="doAIPlace()" style="white-space:nowrap">🤖 Place Signature</button>
             </div>
             <div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:12px">
@@ -884,15 +795,15 @@ footer{border-top:2px solid #e2e8f0;padding:56px 0 28px;background:#0a1628}
             <div class="ai-spinner"></div>
             <div class="ai-label">AI is analysing your document…</div>
           </div>
-          <div id="ai-result" class="hidden" style="background:rgba(6,214,160,.08);border:1px solid rgba(6,214,160,.25);border-radius:10px;padding:12px 18px;margin-bottom:14px;font-size:.88rem;color:#06d6a0;display:flex;align-items:center;gap:10px">
-            <span>✅</span><span id="ai-result-txt">Signature placed</span><span style="margin-left:auto;font-size:.78rem;color:rgba(6,214,160,.5)">Drag to reposition</span>
+          <div id="ai-result" class="hidden" style="background:#f0fdf4;border:1px solid #a7f3d0;border-radius:10px;padding:12px 18px;margin-bottom:14px;font-size:.88rem;color:#059669;display:flex;align-items:center;gap:10px">
+            <span>✅</span><span id="ai-result-txt">Signature placed</span><span style="margin-left:auto;font-size:.78rem;color:#94a3b8">Drag to reposition</span>
           </div>
-          <div style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:14px;margin-bottom:14px">
+          <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:14px;margin-bottom:14px">
             <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:8px">
-              <span style="font-size:.78rem;color:rgba(226,232,248,.35);font-weight:600">📄 DOCUMENT PREVIEW — drag the signature to reposition</span>
+              <span style="font-size:.78rem;color:#94a3b8;font-weight:600">📄 DOCUMENT PREVIEW — drag the signature to reposition</span>
               <div style="display:flex;align-items:center;gap:8px">
                 <button class="btn btn-ghost btn-sm" id="prev-btn" onclick="changePg(-1)" disabled>◀ Prev</button>
-                <span id="pg-lbl" style="font-size:.85rem;color:rgba(226,232,248,.4)">Page 1/1</span>
+                <span id="pg-lbl" style="font-size:.85rem;color:#64748b">Page 1/1</span>
                 <button class="btn btn-ghost btn-sm" id="next-btn" onclick="changePg(1)" disabled>Next ▶</button>
               </div>
             </div>
@@ -904,10 +815,10 @@ footer{border-top:2px solid #e2e8f0;padding:56px 0 28px;background:#0a1628}
               </div>
             </div>
           </div>
-          <div style="background:rgba(6,214,160,.06);border:1px solid rgba(6,214,160,.2);border-radius:14px;padding:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
+          <div style="background:#f0fdf4;border:1px solid #a7f3d0;border-radius:14px;padding:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
             <div>
-              <div style="font-weight:700;color:#f0f4ff;margin-bottom:4px">Ready to download?</div>
-              <div style="font-size:.84rem;color:rgba(226,232,248,.4)">Your signature will be permanently embedded into the document</div>
+              <div style="font-weight:700;color:#0a1628;margin-bottom:4px">Ready to download?</div>
+              <div style="font-size:.84rem;color:#64748b">Your signature will be permanently embedded into the document</div>
             </div>
             <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
               <span id="sign-lbl" class="status-lbl"></span>
@@ -957,20 +868,19 @@ footer{border-top:2px solid #e2e8f0;padding:56px 0 28px;background:#0a1628}
   <main class="app-main">
     <div class="app-header"><h1>Profile Settings</h1></div>
     <div class="app-body">
-      <div class="card" style="max-width:540px;position:relative;overflow:hidden">
-        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#635bff,#06d6a0,transparent)"></div>
+      <div class="card" style="max-width:540px">
         <div id="prof-msg" class="hidden" style="margin-bottom:16px"></div>
         <form id="prof-form">
           <div class="fgroup"><label>Full Name</label><input id="p-name" type="text" required/></div>
           <div class="fgroup"><label>Email</label><input id="p-email" type="email" disabled/></div>
-          <hr style="border:none;border-top:1px solid rgba(255,255,255,.07);margin:20px 0"/>
+          <hr style="border:none;border-top:1px solid #e2e8f0;margin:20px 0"/>
           <div class="fgroup"><label>New Password <span style="opacity:.4;font-size:.78rem">(leave blank to keep current)</span></label><input id="p-pw" type="password" placeholder="Minimum 8 characters"/></div>
           <button type="submit" class="btn btn-primary" style="margin-top:6px">Save Changes</button>
         </form>
-        <hr style="border:none;border-top:1px solid rgba(255,255,255,.07);margin:24px 0"/>
-        <h3 style="font-size:1rem;color:#f0f4ff;margin-bottom:14px;font-family:'Outfit',sans-serif;font-weight:700">Saved Signature</h3>
-        <img id="saved-sig-img" style="max-height:80px;border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px;display:none" alt="Saved signature"/>
-        <p id="no-sig-txt" style="font-size:.84rem;color:rgba(226,232,248,.3)">No signature saved yet.</p>
+        <hr style="border:none;border-top:1px solid #e2e8f0;margin:24px 0"/>
+        <h3 style="font-size:1rem;color:#0a1628;margin-bottom:14px;font-weight:700">Saved Signature</h3>
+        <img id="saved-sig-img" style="max-height:80px;border:1px solid #e2e8f0;border-radius:8px;padding:8px;display:none" alt="Saved signature"/>
+        <p id="no-sig-txt" style="font-size:.84rem;color:#94a3b8">No signature saved yet.</p>
       </div>
     </div>
   </main>
@@ -983,7 +893,7 @@ footer{border-top:2px solid #e2e8f0;padding:56px 0 28px;background:#0a1628}
 pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
 let user=null, pdfDoc=null, curPage=1, sigDataURL=null, camStream=null;
-let drawClr='#e2e8f8', isDrawing=false, lx=0, ly=0, checkoutPlan='pro';
+let drawClr='#0a1628', isDrawing=false, lx=0, ly=0, checkoutPlan='pro';
 let originalPdfBytes=null, currentFileName='document.pdf';
 
 const AUTH_PAGES=['dashboard','sign','billing','profile'];
@@ -1112,21 +1022,21 @@ async function initBilling(){
     const sub=d.subscription,paid=sub.plan!=='free';
     body.innerHTML=`<div style="max-width:700px;display:flex;flex-direction:column;gap:20px">
       <div class="card">
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;margin-bottom:18px;color:#f0f4ff">Current Subscription</h2>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:.9rem"><span style="color:rgba(226,232,248,.4)">Plan</span><span style="font-weight:600">${paid?(sub.plan==='pro'?'Pro – R49/month':'Starter – R19/month'):'Free'}</span></div>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;font-size:.9rem"><span style="color:rgba(226,232,248,.4)">Status</span><span class="badge ${paid?'badge-green':'badge-purple'}">${paid?'Active':'Free tier'}</span></div>
+        <h2 style="font-size:1.3rem;margin-bottom:18px;color:#0a1628">Current Subscription</h2>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #e2e8f0;font-size:.9rem"><span style="color:#64748b">Plan</span><span style="font-weight:600;color:#0a1628">${paid?(sub.plan==='pro'?'Pro – R49/month':'Starter – R19/month'):'Free'}</span></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;font-size:.9rem"><span style="color:#64748b">Status</span><span class="badge ${paid?'badge-green':'badge-purple'}">${paid?'Active':'Free tier'}</span></div>
         ${paid?'<div style="margin-top:18px"><button class="btn btn-danger btn-sm" onclick="cancelSub()">Cancel subscription</button></div>':''}
       </div>
       ${!paid?`<div class="card">
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;margin-bottom:18px;color:#f0f4ff">Upgrade Plan</h2>
+        <h2 style="font-size:1.3rem;margin-bottom:18px;color:#0a1628">Upgrade Plan</h2>
         <div style="display:flex;flex-direction:column;gap:12px">
-          <div style="border:1.5px solid rgba(255,255,255,.1);border-radius:12px;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;transition:all .2s" onclick="go('checkout','starter')">
-            <div><div style="font-weight:700;color:#f0f4ff">Starter</div><div style="font-size:.82rem;color:rgba(226,232,248,.4);margin-top:3px">10 documents/month</div></div>
-            <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:#a78bfa;font-weight:700">R19/mo</div>
+          <div style="border:1.5px solid #e2e8f0;border-radius:12px;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;transition:all .2s" onclick="go('checkout','starter')">
+            <div><div style="font-weight:700;color:#0a1628">Starter</div><div style="font-size:.82rem;color:#64748b;margin-top:3px">10 documents/month</div></div>
+            <div style="font-family:'Playfair Display',serif;font-size:1.6rem;color:#0052cc;font-weight:900">R19/mo</div>
           </div>
-          <div style="border:1.5px solid rgba(99,91,255,.5);border-radius:12px;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;background:rgba(99,91,255,.08);transition:all .2s" onclick="go('checkout','pro')">
-            <div><div style="font-weight:700;color:#f0f4ff">Pro ⚡</div><div style="font-size:.82rem;color:rgba(226,232,248,.4);margin-top:3px">Unlimited documents</div></div>
-            <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:#06d6a0;font-weight:700">R49/mo</div>
+          <div style="border:1.5px solid #0052cc;border-radius:12px;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;background:#eff6ff;transition:all .2s" onclick="go('checkout','pro')">
+            <div><div style="font-weight:700;color:#0a1628">Pro ⚡</div><div style="font-size:.82rem;color:#64748b;margin-top:3px">Unlimited documents</div></div>
+            <div style="font-family:'Playfair Display',serif;font-size:1.6rem;color:#0052cc;font-weight:900">R49/mo</div>
           </div>
         </div>
       </div>`:''}
@@ -1145,7 +1055,7 @@ function initCheckout(plan='pro'){
   document.getElementById('co-plan-badge').textContent=(isStarter?'Starter':'Pro')+' Plan';
   document.getElementById('co-price').textContent=isStarter?'R19':'R49';
   if(isStarter){
-    document.getElementById('co-feats').innerHTML='<div style="display:flex;align-items:center;gap:10px;font-size:.9rem;color:rgba(226,232,248,.7)"><span style="color:#06d6a0">✓</span> 10 documents/month</div><div style="display:flex;align-items:center;gap:10px;font-size:.9rem;color:rgba(226,232,248,.7)"><span style="color:#06d6a0">✓</span> AI signature placement</div><div style="display:flex;align-items:center;gap:10px;font-size:.9rem;color:rgba(226,232,248,.7)"><span style="color:#06d6a0">✓</span> Camera & draw signature</div><div style="display:flex;align-items:center;gap:10px;font-size:.9rem;color:rgba(226,232,248,.7)"><span style="color:#06d6a0">✓</span> Document history</div>';
+    document.getElementById('co-feats').innerHTML='<div style="display:flex;align-items:center;gap:10px;font-size:.9rem;color:#374151"><span style="color:#059669;font-weight:700">✓</span> 10 documents/month</div><div style="display:flex;align-items:center;gap:10px;font-size:.9rem;color:#374151"><span style="color:#059669;font-weight:700">✓</span> AI signature placement</div><div style="display:flex;align-items:center;gap:10px;font-size:.9rem;color:#374151"><span style="color:#059669;font-weight:700">✓</span> Camera & draw signature</div><div style="display:flex;align-items:center;gap:10px;font-size:.9rem;color:#374151"><span style="color:#059669;font-weight:700">✓</span> Document history</div>';
   }
 }
 
@@ -1166,13 +1076,8 @@ document.getElementById('co-form').addEventListener('submit',async e=>{
     }else if(d.url){window.location.href=d.url;}
     else throw new Error(d.error||'Checkout failed');
   }catch(ex){err.textContent=ex.message||'Payment failed.';err.classList.remove('hidden');}
-  finally{btn.disabled=false;btn.textContent='Start 7-day free trial →';}
+  finally{btn.disabled=false;btn.textContent='Pay with Yoco →';}
 });
-
-function expressPay(m){
-  if(!user){go('register');return;}
-  alert(`${m==='apple'?'Apple':'Google'} Pay works once Stripe keys are added. Please use the card form for now.`);
-}
 
 function initPaySuccess(){
   const plan=user?.plan||'pro';
@@ -1392,12 +1297,10 @@ function placeSig(x,y,w,h){
   overlay.style.width=((w||200)*scaleX)+'px';
   overlay.classList.remove('hidden');
   enableDL();
-  // Drag
   let drag=false,ox=0,oy=0;
   overlay.onmousedown=e=>{if(e.target.id==='rz-handle')return;drag=true;const or=overlay.getBoundingClientRect(),wwr=wrap.getBoundingClientRect();ox=e.clientX-(or.left-wwr.left);oy=e.clientY-(or.top-wwr.top);e.preventDefault();};
   document.onmousemove=e=>{if(!drag)return;const wwr=wrap.getBoundingClientRect();overlay.style.left=Math.max(0,e.clientX-wwr.left-ox)+'px';overlay.style.top=Math.max(0,e.clientY-wwr.top-oy)+'px';};
   document.onmouseup=()=>drag=false;
-  // Resize
   let rz=false,rsw=0,rsx=0;
   document.getElementById('rz-handle').onmousedown=e=>{rz=true;rsw=overlay.offsetWidth;rsx=e.clientX;e.preventDefault();e.stopPropagation();};
   document.addEventListener('mousemove',e=>{if(!rz)return;overlay.style.width=Math.max(60,rsw+(e.clientX-rsx))+'px';});
@@ -1409,22 +1312,17 @@ function enableDL(){if(pdfDoc&&sigDataURL)document.getElementById('dl-btn').disa
 async function signAndDownload(){
   if(!pdfDoc){alert('Please upload a PDF first in Step 1.');return;}
   if(!sigDataURL){alert('Please add your signature first in Step 2.');return;}
-
   const btn=document.getElementById('dl-btn'),lbl=document.getElementById('sign-lbl');
   btn.disabled=true;
   lbl.textContent='⏳ Generating signed document…';
   lbl.className='status-lbl';
-
   try{
     const pCanvas=document.getElementById('pdf-canvas');
     const overlay=document.getElementById('sig-overlay');
-
-    // Auto-place if overlay not yet shown
     if(overlay.classList.contains('hidden')){
       placeSig(Math.round(pCanvas.width*0.62),Math.round(pCanvas.height*0.84),Math.round(pCanvas.width*0.28),Math.round(pCanvas.height*0.07));
       await new Promise(r=>setTimeout(r,300));
     }
-
     const cr=pCanvas.getBoundingClientRect();
     const or=overlay.getBoundingClientRect();
     const scaleX=pCanvas.width/cr.width;
@@ -1433,8 +1331,6 @@ async function signAndDownload(){
     const sy=(or.top-cr.top)*scaleY;
     const sw=or.width*scaleX;
     const sh=or.height*scaleY;
-
-    // ── METHOD 1: Real PDF embedding (produces a proper .pdf file) ──
     if(originalPdfBytes&&window.PDFLib){
       try{
         const{PDFDocument}=PDFLib;
@@ -1444,8 +1340,6 @@ async function signAndDownload(){
         const{width:pW,height:pH}=page.getSize();
         const rx=pW/pCanvas.width,ry=pH/pCanvas.height;
         const pdfX=sx*rx,pdfY=pH-(sy*ry)-(sh*ry),pdfW=sw*rx,pdfH=sh*ry;
-
-        // Convert signature to clean PNG bytes via offscreen canvas (FIXES THE ERROR)
         const sigPngBytes=await new Promise((res,rej)=>{
           const tmp=new Image();
           tmp.onload=()=>{
@@ -1463,7 +1357,6 @@ async function signAndDownload(){
           tmp.onerror=rej;
           tmp.src=sigDataURL;
         });
-
         const embeddedImg=await pdfDoc2.embedPng(sigPngBytes);
         page.drawImage(embeddedImg,{x:pdfX,y:pdfY,width:pdfW,height:pdfH});
         const outBytes=await pdfDoc2.save();
@@ -1475,12 +1368,8 @@ async function signAndDownload(){
         logDocument();
         btn.disabled=false;
         return;
-      }catch(pdfErr){
-        console.warn('pdf-lib failed, using canvas fallback:',pdfErr);
-      }
+      }catch(pdfErr){console.warn('pdf-lib failed, using canvas fallback:',pdfErr);}
     }
-
-    // ── METHOD 2: Canvas flatten fallback (always works, produces PNG) ──
     const out=document.createElement('canvas');
     out.width=pCanvas.width;out.height=pCanvas.height;
     const ctx=out.getContext('2d');
@@ -1499,7 +1388,6 @@ async function signAndDownload(){
       logDocument();
       btn.disabled=false;
     },'image/png',0.95);
-
   }catch(ex){
     console.error('Download error:',ex);
     lbl.textContent='❌ '+(ex.message||'Something went wrong — try again');
