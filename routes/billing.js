@@ -3,26 +3,26 @@ const router  = express.Router();
 const https   = require('https');
 const auth    = require('../middleware/auth');
 
-const YOCO_SECRET = process.env.YOCO_SECRET || '';
+const PAYSTACK_SECRET = process.env.PAYSTACK_SECRET || '';
 
-// Plan prices in cents (ZAR)
+// Plan prices in kobo (ZAR cents — Paystack uses smallest currency unit)
 const PLANS = {
-  starter: { amount: 199,  label: 'Starter Plan' },
-  pro:     { amount: 499,  label: 'Pro Plan'     }
+  starter: { amount: 1900, label: 'Starter Plan' }, // R19.00
+  pro:     { amount: 4900, label: 'Pro Plan'      }  // R49.00
 };
 
-// Helper: call Yoco API
-function yocoRequest(path, body) {
+// Helper: call Paystack API
+function paystackRequest(path, body) {
   return new Promise((resolve, reject) => {
     const data = JSON.stringify(body);
     const opts = {
-      hostname: 'payments.yoco.com',
+      hostname: 'api.paystack.co',
       port: 443,
       path,
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${YOCO_SECRET}`,
-        'Content-Type':  'application/json',
+        'Authorization':  `Bearer ${PAYSTACK_SECRET}`,
+        'Content-Type':   'application/json',
         'Content-Length': Buffer.byteLength(data)
       }
     };
@@ -56,27 +56,33 @@ router.post('/create-checkout', auth, async (req, res) => {
   const { plan } = req.body;
   if (!PLANS[plan]) return res.status(400).json({ error: 'Invalid plan' });
 
-  if (!YOCO_SECRET || YOCO_SECRET.includes('REPLACE')) {
-    // Demo mode — no real Yoco key yet
+  if (!PAYSTACK_SECRET || PAYSTACK_SECRET.includes('REPLACE') || PAYSTACK_SECRET === '') {
+    // Demo mode — no real Paystack key yet
     return res.json({ demoMode: true });
   }
 
   try {
     const appUrl = process.env.APP_URL || 'https://signforge-6-wtru.onrender.com';
-    const result = await yocoRequest('/v1/checkouts', {
-      amount:      PLANS[plan].amount,
-      currency:    'ZAR',
-      successUrl:  `${appUrl}/payment-success?plan=${plan}`,
-      cancelUrl:   `${appUrl}/billing`,
-      metadata:    { userId: req.user.id, plan }
+
+    const result = await paystackRequest('/transaction/initialize', {
+      email:        req.user.email,
+      amount:       PLANS[plan].amount,
+      currency:     'ZAR',
+      callback_url: `${appUrl}/payment-success?plan=${plan}`,
+      metadata: {
+        userId: req.user.id,
+        plan,
+        cancel_action: `${appUrl}/billing`
+      }
     });
 
-    if (result.status === 200 || result.status === 201) {
-      return res.json({ url: result.body.redirectUrl });
+    if (result.status === 200 && result.body.status === true) {
+      return res.json({ url: result.body.data.authorization_url });
     }
-    throw new Error(result.body.message || 'Yoco error');
+
+    throw new Error(result.body.message || 'Paystack error');
   } catch (err) {
-    console.error('Yoco checkout error:', err);
+    console.error('Paystack checkout error:', err);
     res.status(500).json({ error: 'Payment failed. Try again.' });
   }
 });
@@ -89,21 +95,34 @@ router.post('/demo-upgrade', auth, (req, res) => {
   res.json({ success: true, plan });
 });
 
-// POST /api/billing/webhook  (Yoco webhook)
+// POST /api/billing/webhook  (Paystack webhook)
 router.post('/webhook', express.raw({ type: 'application/json' }), async (req, res) => {
   try {
+    // Verify the event is from Paystack using your secret key
+    const crypto = require('crypto');
+    const hash = crypto
+      .createHmac('sha512', PAYSTACK_SECRET)
+      .update(req.body)
+      .digest('hex');
+
+    if (hash !== req.headers['x-paystack-signature']) {
+      return res.status(401).json({ error: 'Invalid signature' });
+    }
+
     const event = JSON.parse(req.body);
-    if (event.type === 'payment.succeeded') {
-      const { userId, plan } = event.payload.metadata || {};
+
+    if (event.event === 'charge.success') {
+      const { userId, plan } = event.data.metadata || {};
       if (userId && plan) {
-        // Update user plan in db
         const db = require('../db');
         const user = db.users.find(u => u.id === userId);
         if (user) user.plan = plan;
       }
     }
+
     res.json({ received: true });
   } catch (e) {
+    console.error('Webhook error:', e);
     res.status(400).json({ error: 'Webhook error' });
   }
 });
